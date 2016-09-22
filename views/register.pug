@@ -19,21 +19,21 @@ block content
 		input(id='email', type='email', name='email')
 		br
 		input(type='submit', value='Добавить')
-script.
-	function pwdcheck(){
-		var l = document.getElementById('login').value;
-		var p1 = document.getElementById('pwd').value;
-		var p2 = document.getElementById('pwdr').value;
-		var email = document.getElementById('email').value;
+	script.
+		function pwdcheck(){
+			var l = document.getElementById('login').value;
+			var p1 = document.getElementById('pwd').value;
+			var p2 = document.getElementById('pwdr').value;
+			var email = document.getElementById('email').value;
 
-		if( ! (l && p1 && p2 && email)){
-			document.getElementById('err').innerText = 'Заполните все поля!';
-			return false;
+			if( ! (l && p1 && p2 && email)){
+				document.getElementById('err').innerText = 'Заполните все поля!';
+				return false;
+			}
+			if( ! (p1 == p2)){
+				document.getElementById('err').innerText = 'Пароли должны совпадать!';
+				return false;
+			}
+			console.log('true');
+			return true;
 		}
-		if( ! (p1 == p2)){
-			document.getElementById('err').innerText = 'Пароли должны совпадать!';
-			return false;
-		}
-		console.log('true');
-		return true;
-	}
