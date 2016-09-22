@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  if session._id
+    p Hello #{session.login}. Do you want to post something?
+    form(action='/add' method='post')
+      textarea(name='text', cols=40, rows=5)
+      br
+      input(type='submit', value='Запостить')
+  else
+    p Hello, Guest. Would you like to: #[a(href='/register') Register] or #[a(href='/login') Login]?
+
+  h1 User's Feed:
+  each post in posts
+    h3 #{post.author.login}
+    span(style='padding-left: 20px;') #{post.text}

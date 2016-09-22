@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  a(href='/') < Back
+  br
+  span(id='err')
+  br
+  form(method='post')
+    label(for='login') Login:
+    input(id='login', type='text', name='login')
+    br
+    label(for='pwd') Password:
+    input(id='pwd', type='password', name='pwd')
+    br
+    input(type='submit', value='Войти')
