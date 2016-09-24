@@ -33,4 +33,7 @@ usersRoute.init(app);
 var postsRoute = require('./routes/posts');
 postsRoute.init(app);
 
+var followsRoute = require('./routes/follows');
+followsRoute.init(app);
+
 app.listen(8080);

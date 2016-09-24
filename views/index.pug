@@ -11,7 +11,15 @@ block content
   else
     p Hello, Guest. Would you like to: #[a(href='/register') Register] or #[a(href='/login') Login]?
 
-  h1 User's Feed:
+  if session._id
+    if f
+      h1 Follower's Feed:
+      a(href='/') Switch to global feed
+    else
+      h1 User's Feed:
+      a(href='/f') Switch to follower's feed
+  else
+    h1 User's Feed:
+
   each post in posts
-    h3 #{post.author.login}
-    span(style='padding-left: 20px;') #{post.text}
+    include post
