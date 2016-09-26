@@ -4,10 +4,10 @@ block content
   h1= title
   if session._id
     p Hello #{session.login}. Do you want to post something?
-    form(action='/add' method='post')
-      textarea(name='text', cols=40, rows=5)
+    form(onsubmit='sendData(\'' + session._id + '\'); return false;')
+      textarea(id='postText', cols=40, rows=5)
       br
-      input(type='submit', value='Запостить')
+      button(type='submit') Запостить
   else
     p Hello, Guest. Would you like to: #[a(href='/register') Register] or #[a(href='/login') Login]?
 
@@ -21,5 +21,6 @@ block content
   else
     h1 User's Feed:
 
-  each post in posts
-    include post
+  #feed
+    each post in posts
+      include post

@@ -2,7 +2,9 @@ module.exports.init = function (app) {
 
     //Login route
     app.get('/login', function(req, res){
-        res.render('login');
+        res.render('login', {
+            session: req.session
+        });
     });
 
     app.post('/login', function(req, res){
@@ -19,7 +21,9 @@ module.exports.init = function (app) {
 
     //Register route
     app.get('/register', function(req, res){
-        res.render('register');
+        res.render('register', {
+            session: req.session
+        });
     });
 
     app.post('/register', function(req, res){
