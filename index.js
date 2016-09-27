@@ -36,6 +36,4 @@ usersRoute.init(app);
 var followsRoute = require('./routes/follows');
 followsRoute.init(app);
 
-http.listen(8080,function(){
-    console.log("Listening on 8080");
-});
+http.listen(8080);

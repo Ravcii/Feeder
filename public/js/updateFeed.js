@@ -10,5 +10,5 @@ var sendData = function(uid) {
 
 socket.on('update feed', function (html) {
     document.getElementById('feed').innerHTML = html + document.getElementById('feed').innerHTML;
-    console.log(document.getElementById('feed').innerHTML);
+    document.getElementById('postText').value = "";
 });

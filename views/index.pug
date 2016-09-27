@@ -5,7 +5,7 @@ block content
   if session._id
     p Hello #{session.login}. Do you want to post something?
     form(onsubmit='sendData(\'' + session._id + '\'); return false;')
-      textarea(id='postText', cols=40, rows=5)
+      input(type="text", id='postText')
       br
       button(type='submit') Запостить
   else
