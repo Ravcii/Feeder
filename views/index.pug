@@ -1,26 +1,25 @@
 extends layout
 
 block content
-  h1= title
-  if session._id
-    p Hello #{session.login}. Do you want to post something?
-    form(onsubmit='sendData(\'' + session._id + '\'); return false;')
-      input(type="text", id='postText')
-      br
-      button(type='submit') Запостить
-  else
-    p Hello, Guest. Would you like to: #[a(href='/register') Register] or #[a(href='/login') Login]?
-
-  if session._id
-    if f
-      h1 Follower's Feed:
-      a(href='/') Switch to global feed
-    else
-      h1 User's Feed:
-      a(href='/f') Switch to follower's feed
-  else
-    h1 User's Feed:
-
   #feed
-    each post in posts
-      include post
+    if session._id
+      if f
+        .feed-title Follower's Feed:
+        a.button.switch(href='/') Switch to global feed
+      else
+        .feed-title User's Feed:
+        a.button.switch(href='/f') Switch to follower's feed
+    else
+      .feed-title User's Feed:
+    .clear
+    #posts.block
+      each post in posts
+        include post
+  #sidebar
+    .block
+      .header Wanna post something?
+      if session._id
+        form(onsubmit='sendData(\'' + session._id + '\'); return false;')
+          input(type="text", id='postText')
+          button.button.big(type='submit') Post
+  .clear

@@ -25,7 +25,6 @@ module.exports.init = function (app, io, pug) {
     app.get('/', function(req, res) {
         mongoose.model('Post').find({}).populate('author').sort("-_id").exec(function (e, posts) {
             res.render('index', {
-                title: 'Feeder',
                 session: req.session,
                 posts: posts
             });
@@ -36,10 +35,12 @@ module.exports.init = function (app, io, pug) {
         if (!req.session._id) {
             res.redirect('/');
         } else {
-            mongoose.model('Post').find({author: {$in: req.session.follows}}).populate('author').sort("-_id").exec(function (e, posts) {
-                console.log(req.session.follows);
+            mongoose.model('Post')
+                .find({author: {$in: req.session.follows}})
+                .populate('author')
+                .sort("-_id")
+                .exec(function (e, posts) {
                 res.render('index', {
-                    title: 'Feeder',
                     session: req.session,
                     posts: posts,
                     f: true

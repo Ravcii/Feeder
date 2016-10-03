@@ -1,0 +1,12 @@
+#header
+  a(href='/') #[h1 Feeder]
+  if session._id
+    #userPanel
+      | Hello, #{session.login}.
+      a.button(href='/logout') Logout
+  else
+    #userPanel
+      | Hello, Guest.
+      a.button(href='/register') Register
+      a.button(href='/login') Login
+  .clear

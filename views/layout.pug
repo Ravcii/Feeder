@@ -2,8 +2,10 @@ doctype html
 html
   head
     title= title
-    //link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/css/style.css')
     script(type='text/javascript', src='//cdn.socket.io/socket.io-1.4.5.js')
     script(type='text/javascript', src='/js/updateFeed.js')
   body
-    block content
+    #wrap
+      include header
+      block content

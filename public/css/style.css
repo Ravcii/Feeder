@@ -1,0 +1,104 @@
+@import "fonts.css";
+@import "material.css";
+
+html, body{
+    background: #EEE;
+}
+
+#wrap{
+    margin: 0 auto;
+    min-height: 100%;
+    width: 1170px;
+}
+
+#header{
+    border-bottom: 2px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+#header h1{
+    float: left;
+}
+
+#header #userPanel{
+    float: right;
+    line-height: 45px;
+}
+
+.title{
+    margin-bottom: 15px;
+}
+
+.feed-title{
+    float: left;
+    background: transparent;
+    padding: 0 8px;
+    margin: 0 8px;
+    min-height: 36px;
+    font-size: 18px;
+}
+
+.switch{
+    float: right;
+}
+
+#feed{
+    width: 760px;
+    float: left;
+    padding: 0 15px;
+}
+
+#posts{
+    padding: 0;
+}
+
+.post{
+    border-bottom: 1px solid #EEE;
+    padding: 16px;
+}
+
+.post .author-letter{
+    border-radius: 100%;
+    background: #d9d9d9;
+    float: left;
+    text-align: center;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    line-height: 31px;
+}
+
+.post .info{
+    display: inline-block;
+    float: left;
+    margin-left: 24px;
+    max-width: 672px;
+}
+
+.post .info .author{
+    display: block;
+    font-size: 16px;
+}
+
+.post .info .text{
+    display: block;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#sidebar{
+    width: 350px;
+    float: right;
+    margin-top: 38px;
+    padding: 0 15px;
+}
+
+#sidebar .block{
+    padding: 15px;
+}
+
+#sidebar .block .header{
+    color: #536D79;
+    font-weight: 500;
+}

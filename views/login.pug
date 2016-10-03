@@ -1,15 +1,15 @@
-extends layout
-
-block content
-  a(href='/') < Back
-  br
-  span(id='err')
-  br
-  form(method='post')
-    label(for='login') Login:
-    input(id='login', type='text', name='login')
-    br
-    label(for='pwd') Password:
-    input(id='pwd', type='password', name='pwd')
-    br
-    input(type='submit', value='Войти')
+doctype html
+html
+  head
+    title Login
+    link(rel='stylesheet', href='/css/auth.css')
+  body
+    #wrap
+      h1#logo Feeder
+      a.button(href='/') < Back
+      .block
+        p#err
+        form(method='post')
+          input(id='login', type='text', name='login', placeholder='Enter your login')
+          input(id='pwd', type='password', name='pwd', placeholder='Enter your password')
+          input.button.big(type='submit', value='Войти')

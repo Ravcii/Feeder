@@ -9,6 +9,6 @@ var sendData = function(uid) {
 };
 
 socket.on('update feed', function (html) {
-    document.getElementById('feed').innerHTML = html + document.getElementById('feed').innerHTML;
+    document.getElementById('posts').innerHTML = html + document.getElementById('posts').innerHTML;
     document.getElementById('postText').value = "";
 });
